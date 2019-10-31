@@ -4,11 +4,17 @@
 
 $color-white: #fff;
 $color-black: #000;
-$color-state-of-web: #232840;
+$color-state-of-css: #232840;
+$color-oocss-example-background: #fdbf2c;
+$color-smacss-background: #91c4df;
+$color-atomic-css-background: #0280ae;
+
+$font-size-global: 24px;
 
 // Reveal
 
 .reveal {
+  font-size: $font-size-global;
 
   &::before {
     content: '';
@@ -17,7 +23,21 @@ $color-state-of-web: #232840;
     top: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(50deg, rgba(red, .2), rgba(yellow, .15), rgba(purple, .25), rgba(purple, .3), rgba(red, .2));
+    background: linear-gradient(50deg,
+                                rgba(red, .5),
+                                rgba(yellow, .5),
+                                rgba(purple, .5),
+                                rgba(red, .5),
+                                rgba(salmon, .5),
+                                rgba(aquamarine, .5),
+                                rgba(cyan, .5),
+                                rgba(yellow, .5),
+                                rgba(red, .5));
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    animation: anim infinite 10s;
+    backface-visibility: hidden;
   }
 
   &::after {
@@ -28,7 +48,7 @@ $color-state-of-web: #232840;
     right: 2vw;
     bottom: 3vh;
     background: $color-white;
-    box-shadow: inset 0 0 2px silver;
+    box-shadow: inset 0 0 1px #222;
   }
 
   .no-gradient & {
@@ -38,6 +58,19 @@ $color-state-of-web: #232840;
       content: none;
     }
   }
+
+  section {
+
+    img {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  pre code {
+    font-size: 1.25em;
+    line-height: 1.15;
+  }
 }
 
 .list {
@@ -45,6 +78,31 @@ $color-state-of-web: #232840;
 }
 
 // Styling
+
+.startpage {
+  color: $color-white;
+
+  &__header {
+    display: inline-block;
+    font-size: 3.5em !important;
+    color: $color-white !important;
+    text-shadow: 0 0 2px $color-black !important;
+  }
+
+  &__data {
+    margin-top: 4em;
+    font-size: 2em;
+    text-shadow: 0 0 2px $color-black;
+  }
+}
+
+html.grayscale-animation {
+
+  .reveal .slide-background.present {
+    animation: grayscale-animation infinite 15s;
+    backface-visibility: hidden;
+  }
+}
 
 .state-of-web {
 
@@ -70,6 +128,14 @@ $color-state-of-web: #232840;
       flex-basis: 34%;
       text-align: left;
     }
+  }
+}
+
+.section {
+
+  &__header {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
   }
 }
 
@@ -103,7 +169,14 @@ $color-state-of-web: #232840;
     border-top: 2px solid $color-black;
     transform: rotate(90deg) translateY(-50%);
     top: 50%;
-    left: -260px;
+    left: -160px;
+
+    @media all and (max-width: 1600px) {
+
+      & {
+        left: -50px;
+      }
+    }
 
     &::after {
       content: '';
@@ -132,14 +205,14 @@ $color-state-of-web: #232840;
     height: calc(540px / 7);
     padding-left: 400px;
     padding-right: 40px;
-    border-bottom: 2px dashed $color-black;
+    border-bottom: 3px dashed $color-black;
     list-style: none;
     text-align: right;
     direction: rtl;
     line-height: calc(540px / 7);
 
     &:first-child {
-      border-top: 2px dashed $color-black;
+      border-top: 3px dashed $color-black;
     }
 
     @for $i from 1 through 7 {
@@ -155,13 +228,192 @@ $color-state-of-web: #232840;
 
           content: '';
           position: absolute;
-          bottom: -2px;
+          bottom: -3px;
           left: #{$left}px;
           width: #{$width}px;
-          border-top: 2px solid $color-black;
-          border-bottom: 2px solid $color-black;
+          border-top: 3px solid $color-black;
+          border-bottom: 3px solid $color-black;
         }
       }
     }
+  }
+}
+
+.toggler {
+
+  &__input {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &__label {
+    margin-left: 2em;
+    font-size: .75em;
+    color: #999;
+    transition: color linear .5s;
+
+    &.is-fullscreen {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__element {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 1em 2em;
+    background: #fff;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 5px 9999px rgba(black, .75);
+
+    pre {
+      width: 100% !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+    }
+
+    label {
+      position: absolute;
+      right: 26px;
+      top: 16px;
+    }
+  }
+
+  &__input:checked ~ &__element {
+    display: block;
+  }
+}
+
+.meth-statement {
+
+  &__title {
+
+  }
+
+  &__text {
+    font-size: .5em;
+  }
+}
+
+.example {
+
+  &__header {
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+  }
+
+  &__code {
+    margin-top: 2em;
+  }
+
+  &__filename {
+    font-family: monospace;
+    font-size: .75em;
+    color: rgba(black, .5);
+  }
+}
+
+.materials {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+
+  &__item {
+    box-sizing: border-box;
+    flex: 0 1 50%;
+    padding: 1em 2em;
+  }
+
+  &__title {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: .5em;
+  }
+
+  &__mark {
+    color: gray;
+  }
+}
+
+.atomic-css-start {
+
+  h1 {
+    color: $color-white !important
+  }
+}
+
+.contacts {
+  font-size: 2em;
+}
+
+// Animations
+
+@keyframes anim {
+
+  from {
+    background-position: 50% 50%;
+  }
+
+  15% {
+    background-position: 30% 80%;
+  }
+
+  30% {
+    background-position: 40% 0%;
+  }
+
+  50% {
+    background-position: 10% 50%;
+  }
+
+  70% {
+    background-position: 70% 10%;
+  }
+
+  85% {
+    background-position: 100% 40%;
+  }
+
+  to {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes grayscale-animation {
+
+  from {
+    filter: grayscale(0) brightness(1.25);
+  }
+
+  10% {
+    filter: grayscale(0) brightness(1.25);
+  }
+
+  40% {
+    filter: grayscale(1) brightness(.8);
+  }
+
+  60% {
+    filter: grayscale(1) brightness(.8);
+  }
+
+  90% {
+    filter: grayscale(0) brightness(1.25);
+  }
+
+  to {
+    filter: grayscale(0) brightness(1.25);
   }
 }
