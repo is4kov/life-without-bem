@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Life Without BEM @ LvivCSS 2019</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/lvivcss-2019.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/idea.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="start" data-state="no-gradient" data-background="assets/images/bg.jpg" data-background-size="cover">
+					<h1>Life without BEM</h1>
+				</section>
+
+				<section class="about">
+					<p>Yevhen Isakov</p>
+				</section>
+
+				<section>
+					<h3>Methodology</h3>
+					<h3>Style guide</h3>
+				</section>
+
+				<section data-background="assets/images/examples/styleguide-1.jpg" data-background-size="contain" data-state="no-gradient"></section>
+
+				<section data-background="assets/images/examples/styleguide-2.jpg" data-background-size="contain" data-state="no-gradient"></section>
+
+				<section data-background="assets/images/examples/styleguide-3.jpg" data-background-size="contain" data-state="no-gradient"></section>
+
+				<section data-background="assets/images/examples/styleguide-4.jpg" data-background-size="contain" data-state="no-gradient"></section>
+
+				<section class="bem-start">
+					<h3>BEM</h3>
+				</section>
+				<section class="bem-pros">
+					<p>Why we <span style="color:red">❤️</span> BEM</p>
+					<ul class="list">
+						<li class="fragment">Semantics</li>
+						<li class="fragment">Naming convention</li>
+						<li class="fragment">Component approach</li>
+						<li class="fragment">Classes only</li>
+						<li class="fragment">Minimal amount of cascade</li>
+					</ul>
+				</section>
+				<section class="reasons-without-bem">
+					<h3>Why BEM can <span style="color:red">💔</span> you</h3>
+					<ul class="list">
+						<li class="fragment">High barrier to entry</li>
+						<li class="fragment">Outsourcing project / requirements</li>
+						<li class="fragment">Amount of HTML devs</li>
+						<li class="fragment">Deadlines</li>
+					</ul>
+				</section>
+				<section class="state-of-web-start" data-state="state-of-web-start">
+					<h3>A state of Web 2019</h3>
+				</section>
+				<section class="state-of-web">
+					<div class="state-of-web__list">
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading"></div>
+							<div class="state-of-web__cell">Awareness</div>
+							<div class="state-of-web__cell">Interest</div>
+							<div class="state-of-web__cell">Satisfaction</div>
+						</div>
+						<div class="state-of-web__item fragment">
+							<div class="state-of-web__cell state-of-web__cell--heading">BEM</div>
+							<div class="state-of-web__cell">83%</div>
+							<div class="state-of-web__cell">58%</div>
+							<div class="state-of-web__cell">86%</div>
+						</div>
+						<div class="state-of-web__item fragment">
+							<div class="state-of-web__cell state-of-web__cell--heading">Atomic CSS</div>
+							<div class="state-of-web__cell">68%</div>
+							<div class="state-of-web__cell">58%</div>
+							<div class="state-of-web__cell">81%</div>
+						</div>
+						<div class="state-of-web__item fragment">
+							<div class="state-of-web__cell state-of-web__cell--heading">OOCSS</div>
+							<div class="state-of-web__cell">60%</div>
+							<div class="state-of-web__cell">48%</div>
+							<div class="state-of-web__cell">77%</div>
+						</div>
+						<div class="state-of-web__item fragment">
+							<div class="state-of-web__cell state-of-web__cell--heading">SMACSS</div>
+							<div class="state-of-web__cell">55%</div>
+							<div class="state-of-web__cell">47%</div>
+							<div class="state-of-web__cell">78%</div>
+						</div>
+						<div class="state-of-web__item fragment">
+							<div class="state-of-web__cell state-of-web__cell--heading">ITCSS</div>
+							<div class="state-of-web__cell">25%</div>
+							<div class="state-of-web__cell">40%</div>
+							<div class="state-of-web__cell">84%</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="oocss-start">
+					<h3>OOCSS</h3>
+				</section>
+
+				<section data-background="assets/images/oocss-3px.jpg" data-background-size="cover" data-state="no-gradient"></section>
+
+				<section class="oocss-statement">
+					<p>CSS should be divided</p>
+					<ul class="list">
+						<li class="fragment">Template</li>
+						<li class="fragment">Grid</li>
+						<li class="fragment">Module</li>
+						<li class="fragment">Content</li>
+					</ul>
+				</section>
+
+				<section data-background="assets/images/oocss-example.jpg" data-background-size="cover" data-state="no-gradient"></section>
+
+				<section class="smacss-start">
+					<h3>SMACSS</h3>
+				</section>
+
+				<section class="smacss-statement">
+					<h3>SMACSS</h3>
+					<ul>
+						<li class="fragment">
+							<div>Base</div>
+							<div>Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.</div>
+						</li>
+						<li class="fragment">
+							<div>Layout</div>
+							<div>Layout rules divide the page into sections. Layouts hold one or more modules together.</div>
+						</li>
+						<li class="fragment">
+							<div>Module</div>
+							<div>Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.</div>
+						</li>
+						<li class="fragment">
+							<div>State</div>
+							<div>State rules are ways to describe how our modules or layouts will look when in a particular state.</div>
+						</li>
+						<li class="fragment">
+							<div>Theme</div>
+							<div>Theme rules are similar to state rules in that they describe how modules or layouts might look. Most sites don’t require a layer of theming but it is good to be aware of it.</div>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<pre><code>.sidebar div {
+    border: 1px solid #333;
+    }
+
+.sidebar h3 {
+    margin-top: 5px;
+    }
+
+.sidebar ul {
+    margin-bottom: 5px;
+    }</code></pre>
+				</section>
+
+				<section>
+					<p>BEM modifiers</p>
+					<ul>
+						<li class="fragment">menu__item--active</li>
+						<li class="fragment">menu__item_active</li>
+						<li class="fragment">menu__item_state_active</li>
+					</ul>
+				</section>
+
+				<section>
+					<pre><code>el.classList.toggle('menu__item--active')</code></pre>
+					<pre class="fragment"><code>export default class Component {
+
+    constructor(el) {
+
+        ...
+
+        for(let cls of this.el.classList.values()) {
+            if (!cls.includes('--')) {
+                this.bem = cls;
+                break;
+            }
+        }
+    }
+}
+
+el.classList.toggle(this.bem + '--active');</code></pre>
+				</section>
+
+				<section>
+					
+				</section>
+
+				<section>
+					<div class="example">
+						<p class="example__header">Base</p>
+						<div class="example__description">Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="example">
+						<p class="example__header">Layout</p>
+						<div class="example__description">Layout rules divide the page into sections. Layouts hold one or more modules together.</div>
+						<div class="example__code fragment">
+							<pre><code></code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section class="itcss-start">
+					<h3>ITCSS</h3>
+				</section>
+
+				<section class="itcss">
+					<div class="itcss-concept">
+						<div class="itcss-concept__triangle">
+							<ul class="itcss-concept__list">
+								<li class="itcss-concept__item fragment">Settings</li>
+								<li class="itcss-concept__item fragment">Tools</li>
+								<li class="itcss-concept__item fragment">Generic</li>
+								<li class="itcss-concept__item fragment">Elements</li>
+								<li class="itcss-concept__item fragment">Objects</li>
+								<li class="itcss-concept__item fragment">Components</li>
+								<li class="itcss-concept__item fragment">Utilities</li>
+							</ul>
+						</div>
+						<div class="itcss-concept__specificity fragment">Specificity</div>
+					</div>
+				</section>
+
+				<section>
+					<pre><code>// main.scss
+
+@import 'settings/*';
+@import 'tools/*';
+@import 'generic/*';
+@import 'elements/*';
+@import 'objects/*';
+@import 'components/*';
+@import 'trumps/*';</code></pre>
+				</section>
+
+				<section>
+					<p>1. Settings</p>
+					<div>
+						<p>Used with preprocessors</p>
+						<p>Fonts definitions, colors, variables, etc.</p>
+					</div>
+					<div class="fragment">
+						<div>settings/settings.</div>
+						<pre><code>$global-font-size: 12px;
+
+$color-primary: #ce239a;
+$color-secondary: #a7843b;
+
+...</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>2. Tools</p>
+					<div>
+						<p>Globally used mixins and function</p>
+					</div>
+					<div class="fragment">
+						<pre><code>@mixin clearfix() {
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+        }
+    }</code></pre>
+					</div>
+				</section>
+
+				<section class="itcss-example">
+					<p class="itcss-example__header">3. Generic</p>
+					<div class="itcss-example__description">
+						<p>Normalizing styles</p>
+						<p>Box-sizing</p>
+					</div>
+					<div class="itcss-example__code fragment">
+						<pre><code>*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    }</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>4. Elements</p>
+					<div>
+						<p>Bare HTML elements</p>
+						<p><b>Reset</b> lists, anchors, etc.</p>
+					</div>
+					<div class="itcss-example__code">
+						<pre><code>h1 {
+    @include font-size($font-size-h1);
+    }
+
+h2 {
+    @include font-size($font-size-h2);
+    }
+
+h3 {
+    @include font-size($font-size-h3);
+    }
+
+...</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>5. Objects</p>
+					<div>
+						<p>Simple & reusable</p>
+						<p>Containers, grids, global animations, etc.</p>
+					</div>
+					<div class="itcss-example__code fragment">
+						<pre><code class="scss">.o-box {
+    display: block;
+    padding: $inuit-global-spacing-unit;
+
+    /* Size variants
+    ================ */
+
+    &--flush {
+        padding: 0;
+        }
+
+    &--small {
+        padding: $global-spacing-unit-tiny;
+        }
+
+    &--large {
+        padding: $global-spacing-unit-large;
+        }
+    }
+</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<p>6. Components</p>
+					<div>Actual UI</div>
+				</section>
+
+				<section>
+					<p>7. Trumps</p>
+					<div>
+						<p>Utilities and helper classes</p>
+						<p>Visibility, alternative colors</p>
+						<p><strong>Overrides anything</strong></p>
+					</div>
+				</section>
+
+				<section>
+					<p>Features</p>
+					<ul>
+						<li>Prefixes: <code>o-</code>, <code>c-</code>, <code>t-</code></li>
+						<li class="fragment">
+							<div>Trumps level as new <code>!important</code></div>
+							<code>
+								<pre><code>&lt;h3 class="o-title t-color-blue">Heading&lt;/h3>
+
+.o-title {
+    color: red;
+    }
+
+    /* trumps/utilities.scss */
+
+.t-color-blue {
+    color: blue;
+									}</code></pre>
+							</code>
+						</li>
+						<li class="fragment">
+							<div>Avoiding mixing the same level entities</div>
+							<pre><code>&lt;div class="o-box c-footer">&lt;/div></code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section class="atomic-css-start">
+					<h3>Atomic CSS</h3>
+				</section>
+
+
+				<section class="materials">
+					<div>
+						<p>OOCSS</p>
+						<div><a href="http://oocss.org/">Official site</a></div>
+						<div><a href="https://github.com/stubbornella/oocss" target="_blank">Github</a> (inactive)</div>
+					</div>
+					<div>
+						<p>SMACSS</p>
+						<div><a href="http://smacss.com/" target="_blank">Official site</a></div>
+					</div>
+					<div>
+						<p>ITCSS</p>
+						<div><a href="http://itcss.io" target="_blank">Official site</a> (still empty)</div>
+						<div><a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/" target="_blank">ITCSS: Scalable and Maintainable CSS Architecture</a></div>
+						<div><a href="https://www.xfive.co/blog/itcss-year-after/" target="_blank">ITCSS: A Year After</a></div>
+						<div><a href="http://inuitcss.com/" target="_blank">INUITCSS homepage</a> (guess what?), <a
+								href="https://github.com/inuitcss/inuitcss" target="_blank">Github</a></div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
