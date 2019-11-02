@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * White theme for reveal.js. This is the opposite of the 'black' theme.
  *
@@ -285,7 +286,7 @@ body {
     background-size: 300% 300%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    animation: anim infinite 10s;
+    animation: anim infinite 15s;
     backface-visibility: hidden; }
   .reveal::after {
     content: '';
@@ -304,6 +305,12 @@ body {
   .reveal pre code {
     font-size: 1.25em;
     line-height: 1.15; }
+  .reveal pre.is-inline {
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+    padding: 5px 8px;
+    vertical-align: middle; }
 
 .list {
   list-style: none !important; }
@@ -321,7 +328,7 @@ body {
     text-shadow: 0 0 2px #000; }
 
 html.grayscale-animation .reveal .slide-background.present {
-  animation: grayscale-animation infinite 15s;
+  animation: grayscale-animation infinite 20s;
   backface-visibility: hidden; }
 
 .state-of-web__item {
@@ -517,7 +524,7 @@ html.grayscale-animation .reveal .slide-background.present {
   font-size: .5em; }
 
 .example__header {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.375em;
   font-size: 1.5em; }
 
 .example__code {
@@ -546,8 +553,44 @@ html.grayscale-animation .reveal .slide-background.present {
 .atomic-css-start h1 {
   color: #fff !important; }
 
+.styleguide-connect__end {
+  position: relative;
+  padding-top: 4em; }
+  .styleguide-connect__end::before, .styleguide-connect__end::after {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 2em;
+    transform: translateX(-50%) translateY(-50%); }
+  .styleguide-connect__end::before {
+    content: '↓';
+    margin-left: -100px; }
+  .styleguide-connect__end::after {
+    content: '↑';
+    margin-left: 100px; }
+  .styleguide-connect__end.visible::before, .styleguide-connect__end.visible::after {
+    display: block; }
+
+.styleguide-connect__start + .styleguide-connect__end.visible::before {
+  display: block; }
+
+.atomic-example__item {
+  margin: 20px 0; }
+
+.atomic-example__code.fragment.visible + .atomic-example__code::before {
+  content: '→';
+  margin: 0 20px; }
+
+.atomic-example__code.fragment.visible + .atomic-example__summary::before {
+  content: '→';
+  margin: 0 20px; }
+
 .contacts {
   font-size: 2em; }
+
+.atomizer-example__result::before {
+  content: '↓'; }
 
 @keyframes anim {
   from {

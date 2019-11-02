@@ -36,18 +36,13 @@
 					</div>
 				</section>
 
-				<section class="speaker">
+				<!--<section class="speaker">
 					<h2>Yevhen Isakov</h2>
 					<div class="fragment">Software Engineer @ EPAM Systems</div>
 					<div class="fragment">12 years of experience</div>
 					<div class="fragment">Lecturer at internal & external EPAM courses</div>
 					<div class="fragment">Lecturer at Kyiv Politechnical Institute & Shevchenko University</div>
-				</section>
-
-				<section>
-					<h3>Style guide</h3>
-					<h3>Methodology</h3>
-				</section>
+				</section>-->
 
 				<section data-state="no-gradient grayscale-animation"
 						 data-background="assets/images/bg.jpg"
@@ -69,11 +64,19 @@
 						 data-background-size="contain"
 						 data-state="no-gradient"></section>
 
+				<section>
+					<div class="styleguide-connect">
+						<h1 class="styleguide-connect__start">Style guide</h1>
+						<h1 class="styleguide-connect__end fragment">Methodology</h1>
+						<span class="fragment"></span>
+					</div>
+				</section>
+
 				<section class="bem-start">
-					<h3>BEM</h3>
+					<h1>BEM</h1>
 				</section>
 				<section class="bem-pros">
-					<h3>Why we <span style="color:red">❤️</span> BEM</h3>
+					<h1>Why we <span style="color:red">❤️</span> BEM</h1>
 					<ul class="list">
 						<li class="fragment">Semantics</li>
 						<li class="fragment">Naming convention</li>
@@ -83,7 +86,7 @@
 					</ul>
 				</section>
 				<section class="reasons-without-bem">
-					<h3>Why BEM can <span style="color:red">💔</span> you</h3>
+					<h1>So how might <span style="color:red">💔</span> BEM</h1>
 					<ul class="list">
 						<li class="fragment">High barrier to entry</li>
 						<li class="fragment">Outsourcing project / requirements</li>
@@ -474,6 +477,7 @@ h3 {
 							<div>Avoiding mixing the same level entities</div>
 							<pre><code>&lt;div class="o-box c-footer">&lt;/div></code></pre>
 						</li>
+						<li class="fragment">After all, it's not a methodology by itself!</li>
 					</ul>
 				</section>
 
@@ -489,6 +493,253 @@ h3 {
 						 data-background-color="#0280ae">
 					<img src="assets/images/atomic-css-logo.png" alt="">
 					<h1>Atomic CSS</h1>
+				</section>
+
+				<section>
+					<pre><code style="font-size: 1.5em;">&lt;h1 class="Fw(b) Fz(30px) C(orange)">Hi from Atomic CSS!&lt;/h1></code></pre>
+				</section>
+
+				<section>
+					<h3>Features</h3>
+					<ul class="list">
+						<li class="fragment">Single responsibility</li>
+						<li class="fragment">Classes are immutable</li>
+						<li class="fragment">There are no more components <span class="fragment">at all</span></li>
+						<li class="fragment">No extra code <span class="fragment">at all</span></li>
+						<li class="fragment">Atomizer</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Atomizer</h2>
+					<div class="atomizer-example">
+						<div class="atomizer-example__start fragment">
+							<pre><code>Fw(b)</code></pre>
+						</div>
+						<div class="atomizer-example__result fragment">
+							<pre><code>.Fw\(b\) {
+    font-weight: bold;
+    }</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="atomic-example">
+						<h3 class="atomic-example__header">Class syntax</h3>
+						<ul class="atomic-example__list list">
+							<li class="atomic-example__item">
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>D(n)</code></pre>
+								</span>
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>display: none</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>D(n)!</code></pre>
+								</span>
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>display: none !important</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>Fz(18px)</code></pre>
+								</span>
+								<span class="atomic-example__code fragment">
+									<pre class="is-inline"><code>font-size: 18px</code></pre>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div class="atomic-example">
+						<h3 class="atomic-example__header">Class syntax</h3>
+						<ul class="atomic-example__list list">
+							<li class="atomic-example__item">
+								<span class="fragment atomic-example__code">
+									<pre class="is-inline"><code class="">D()</code></pre>
+								</span>
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline"><code class="atomic-example__summary">display</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline atomic-example__code"><code>Bgc()</code></pre>
+								</span>
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline atomic-example__summary"><code class="">background-color</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline"><code>Fl()</code></pre>
+								</span>
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline"><code class="">float</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline"><code>Objf()</code></pre>
+								</span>
+								<span class=" atomic-example__code fragment">
+									<pre class="is-inline"><code class="">object-fit</code></pre>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Workaround</h3>
+					<div class="atomic-example">
+						<div class="atomic-example__item">
+							<span class="atomic-example__code fragment">
+								<pre class="is-inline"><code>left</code></pre>
+							</span>
+							<span class="atomic-example__code fragment">
+								<pre class="is-inline"><code>Start</code></pre>
+							</span>
+						</div>
+						<div class="atomic-example__item">
+							<span class="atomic-example__code fragment">
+								<pre class="is-inline"><code>right</code></pre>
+							</span>
+							<span class="atomic-example__code fragment">
+								<pre class="is-inline"><code>End</code></pre>
+							</span>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="atomic-example">
+						<h3 class="atomic-example__header">Aliases</h3>
+						<ul class="atomic-example__list list">
+							<li class="atomic-example__item">
+								<span class="fragment atomic-example__code">
+									<pre class="is-inline"><code>Brightness(.5)</code></pre>
+								</span>
+								<span class="fragment atomic-example__code">
+									<pre class="is-inline"><code>filter: brightness(.5)</code></pre>
+								</span>
+							</li>
+							<li class="atomic-example__item">
+								<span class="fragment atomic-example__code">
+									<pre class="is-inline"><code>Rotate(90deg)</code></pre>
+								</span>
+								<span class="fragment atomic-example__code">
+									<pre class="is-inline"><code class="">transform: rotate(90deg)</code></pre>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div class="atomic-example">
+						<h3>Pseudo-classes</h3>
+						<div>
+							<pre class="is-inline fragment"><code>Td(u):h</code></pre>
+						</div>
+						<div>
+							<pre class="fragment"><code>Td\(u\)\:h:hover {
+    text-decoration: underline;
+    }</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="actomic-example">
+						<h3>Context</h3>
+						<div class="fragment">
+							<pre><code>&lt;div class="foo">
+    &lt;div class="foo:h_D(n)">&lt;/div>
+&lt;/div></code></pre>
+						</div>
+						<div class="fragment">
+							<pre><code>.foo:hover .foo\:h_D\(n\) {
+    display: none;
+    }</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="atomic-example">
+						<h3>Breakpoints</h3>
+						<div class="fragment">
+							<pre><code>breakPoints: {
+    'sm': '@media (max-width: 640px)',
+    'md': '@media (max-width: 1024px)',
+    'lg': '@media (max-width: 1280px)'
+},</code></pre>
+						</div>
+						<div class="fragment">
+							<pre><code>&lt;div class="W(50%)--sm W(33%)--md W(25%)--lg">...&lt;/div></code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Is Atomic CSS does evil? <span style="color:red">😈</span></h2>
+					<ul class="list">
+						<li class="fragment">You write CSS by writing HTML</li>
+						<li class="fragment">A ton of classes on one node</li>
+						<li class="fragment">Forget about theming</li>
+					</ul>
+				</section>
+
+				<section class="state-of-web">
+					<div class="state-of-web__list">
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading"></div>
+							<div class="state-of-web__cell">Awareness</div>
+							<div class="state-of-web__cell">Interest</div>
+							<div class="state-of-web__cell">Satisfaction</div>
+						</div>
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading">BEM</div>
+							<div class="state-of-web__cell">83%</div>
+							<div class="state-of-web__cell">58%</div>
+							<div class="state-of-web__cell">86%</div>
+						</div>
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading">Atomic CSS</div>
+							<div class="state-of-web__cell">68%</div>
+							<div class="state-of-web__cell">58%</div>
+							<div class="state-of-web__cell">81%</div>
+						</div>
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading">OOCSS</div>
+							<div class="state-of-web__cell">60%</div>
+							<div class="state-of-web__cell">48%</div>
+							<div class="state-of-web__cell">77%</div>
+						</div>
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading">SMACSS</div>
+							<div class="state-of-web__cell">55%</div>
+							<div class="state-of-web__cell">47%</div>
+							<div class="state-of-web__cell">78%</div>
+						</div>
+						<div class="state-of-web__item">
+							<div class="state-of-web__cell state-of-web__cell--heading">ITCSS</div>
+							<div class="state-of-web__cell">25%</div>
+							<div class="state-of-web__cell">40%</div>
+							<div class="state-of-web__cell">84%</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>Life without BEM?</h1>
 				</section>
 
 				<section>

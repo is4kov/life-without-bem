@@ -36,7 +36,7 @@ $font-size-global: 24px;
     background-size: 300% 300%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    animation: anim infinite 10s;
+    animation: anim infinite 15s;
     backface-visibility: hidden;
   }
 
@@ -67,9 +67,20 @@ $font-size-global: 24px;
     }
   }
 
-  pre code {
-    font-size: 1.25em;
-    line-height: 1.15;
+  pre {
+
+    code {
+      font-size: 1.25em;
+      line-height: 1.15;
+    }
+
+    &.is-inline {
+      display: inline-block;
+      width: auto;
+      margin: 0 auto;
+      padding: 5px 8px;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -99,7 +110,7 @@ $font-size-global: 24px;
 html.grayscale-animation {
 
   .reveal .slide-background.present {
-    animation: grayscale-animation infinite 15s;
+    animation: grayscale-animation infinite 20s;
     backface-visibility: hidden;
   }
 }
@@ -310,7 +321,7 @@ html.grayscale-animation {
 .example {
 
   &__header {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.375em;
     font-size: 1.5em;
   }
 
@@ -354,8 +365,85 @@ html.grayscale-animation {
   }
 }
 
+.styleguide-connect {
+
+  &__end {
+    position: relative;
+    padding-top: 4em;
+
+    &::before,
+    &::after {
+      display: none;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      font-size: 2em;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &::before {
+      content: '↓';
+      margin-left: -100px;
+    }
+
+    &::after {
+      content: '↑';
+      margin-left: 100px;
+    }
+
+    &.visible::before,
+    &.visible::after {
+
+      display: block;
+    }
+  }
+
+  &__start + &__end.visible {
+
+    &::before {
+      display: block;
+    }
+  }
+}
+
+.atomic-example {
+
+  &__item {
+    margin: 20px 0;
+  }
+
+  &__code {
+
+    &.fragment.visible + & {
+
+      &::before {
+        content: '→';
+        margin: 0 20px;
+      }
+    }
+  }
+
+  &__code.fragment.visible + &__summary {
+
+    &::before {
+      content: '→';
+      margin: 0 20px;
+    }
+  }
+}
+
 .contacts {
   font-size: 2em;
+}
+
+.atomizer-example {
+
+  &__result {
+
+    &::before {
+      content: '↓';
+    }
+  }
 }
 
 // Animations
